@@ -1,0 +1,112 @@
+{
+  "contract_name": "PayExample",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_addr",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "killContract",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amt",
+          "type": "uint256"
+        },
+        {
+          "name": "_addr",
+          "type": "address"
+        }
+      ],
+      "name": "pay",
+      "outputs": [],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "person1",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "etherAmount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "person2",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x606060405234610000575b60008054600160a060020a03191633600160a060020a03161781555b505b6102b1806100376000396000f300606060405236156100725763ffffffff60e060020a60003504166313af403581146100775780631c02708d1461009257806331cbf5e3146100a15780633ccfd60b146100ba57806346cb59c2146100c95780634935ce6f146100f257806366993d66146101115780638da5cb5b1461013a575b610000565b3461000057610090600160a060020a0360043516610163565b005b34610000576100906101b0565b005b610090600435600160a060020a03602435166101d8565b005b346100005761009061022e565b005b34610000576100d6610252565b60408051600160a060020a039092168252519081900360200190f35b34610000576100ff610261565b60408051918252519081900360200190f35b34610000576100d6610267565b60408051600160a060020a039092168252519081900360200190f35b34610000576100d6610276565b60408051600160a060020a039092168252519081900360200190f35b60005433600160a060020a0390811691161415610072576000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383161790556101ac565b610000565b5b50565b60005433600160a060020a03908116911614156101d557600054600160a060020a0316ff5b5b565b3482146101e457610000565b600380543401905560018054600160a060020a0333811673ffffffffffffffffffffffffffffffffffffffff199283161790925560028054928416929091169190911790555b5050565b60005433600160a060020a0390811691161415610072576101d5565b610000565b5b565b600154600160a060020a031681565b60035481565b600254600160a060020a031681565b600054600160a060020a0316815600a165627a7a723058209d2d5db037e7c49b3d2c71a43be66253ef98aac2c445eca542a5e5f0b7fbab060029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1497650682218
+}
