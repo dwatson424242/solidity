@@ -7,6 +7,7 @@
 		* Truffle: https://www.youtube.com/watch?v=8jI1TuEaTro&t=16m00s
 	* https://www.youtube.com/watch?v=3-XPBtAfcqo - Intro to Ethereum Smart Contract Development Part2
 	* http://decypher.tv - Jordan's full Ehtereum video series for sale. (some for free)
+	* https://www.youtube.com/watch?v=cakc2mirxfk - Contract Patterns & Security
 
 * Truffle Development
 	* https://youtu.be/MskZ3oSpgzA - Presentation on Truffle
