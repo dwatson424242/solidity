@@ -1,4 +1,4 @@
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.11;
 
 contract owned {
     address public owner;
@@ -22,9 +22,9 @@ contract mortal is owned {
 
 contract RoboPurchase is mortal {
 
-
-    address public seller; // Same
+    address public seller; // The ethereum address of the seller
     uint public seller_balance; // Amount of ether designated to the seller
+    address public robot; // The ethereum address of the robot
 
     enum State { Ordered, InTransit, Completed }
 
@@ -35,12 +35,14 @@ contract RoboPurchase is mortal {
         int8 pin;
     }
 
-    // Build an Array or a mapping to keep up with your purchase data.
+    // Build an Array or a mapping to keep up with your purchase data. Call it "purchases"
 
     function RoboPurchase() {
         // Set the seller variable
 
         // Preset the seller balance to 0
+
+        // Preset the robot to msg.sender
 
     }
 
@@ -48,62 +50,76 @@ contract RoboPurchase is mortal {
 
     // Add an onlySeller() modifier to throw if msg.sender is not the seller
 
-    // Add an inState() modifier to throw if the state is not correct
+    // Add an onlyRobot() modifier to throw if msg.sender is not the robot
 
-    event orderPlaced();
+    event orderPlaced(uint orderNumber);
     event orderAccepted(uint orderNumber);
     event robotConfirmed();
 
-    function placeOrder(uint _value) payable 
-        // Add logical modifiers here
-    {
+    function setRobotAddress(address _addr) onlySeller {
+        robot = _addr;
+    }
 
-        if(msg.value < _value) throw;
-
-        // if msg.value > _value, the remaining amount is a tip.
-
-        // Add a new order to the system in state=Ordered
-
-        // new purchase() // new array element .push()
+    function placeOrder(uint _value) payable {
 
 
-//        msg.sender
-//        msg.value
+        if(msg.value < _value) throw; // if msg.value > _value, the remaining amount is a tip.
+
+        // Setup a memory variable as of type Purchase
+
+        // Assign the variables to the new memory variable
+
+        // Push the variable to the purchases array
+
+        // Get the order number and trigger the orderPlaced event
 
     }
 
 
-    function acceptOrder(uint _orderNumber, int8 _pin) 
-        // Add logical modifiers here
+    function acceptOrder(uint _orderNumber, uint _pin) 
+        // Only allow the owner to run this function
     {
 
-        // msg.sender needs to be seller
-        // The order can no longer be cancelled
-        // The state changes to InTransit
-        // Store the pin into the order
+        // Check to make sure the order number is valid
 
-        // The pin code is stored in the contract
+        // Verify that the pin code is 4 digits between 1000 and 9999
+
+        // Verify that the Order State is currently 'Ordered'
+
+        // Change the Order State to 'InTransit'
+
+        // Store the pin to the order
+
+        // Trigger the orderAccepted event for this order
 
     }
 
 
-    function robotConfirm(uint _orderNumber, uint8 _pin) 
-        // Add logical modifiers here
+    function robotConfirm(uint _orderNumber, uint _pin) 
+        // Only allow the Robot to run this funciton
     {
 
+        // Check to make sure the order number is valid
 
-        // msg.sender needs to be the seller (later the robot can have his own address)
-        // Make sure the pin code matches
+        // Verify that the pin code is 4 digits between 1000 and 9999
 
-        // Change the state of the order to Completed
-        // Add purchase.value -> money to the seller_balance
-        // 
+        // Verify that the Order State is currently 'InTransit'
+
+        // Verify that the pin matches the pin in the order.
+
+        // Change the state of the order to 'Completed'
+
+        // Trigger the robotConfirmed event
+
+        // Add add the value from the order to the seller balance
+
+        // Set the value of the order to 0
 
     }
 
     function withdraw() {
-        // if msg.sender == seller
-        // send funds to the seller addresss
+
+        // if msg.sender == seller, send funds to the seller addresss
 
     }
 
