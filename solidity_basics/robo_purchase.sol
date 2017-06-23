@@ -64,7 +64,7 @@ contract RoboPurchase is mortal {
 
         // Add a new order to the system in state=Ordered
 
-        new purchase() // new array element .push()
+        // new purchase() // new array element .push()
 
 
 //        msg.sender
