@@ -12,5 +12,7 @@
 	* https://github.com/ethjs/examples
 	* https://github.com/AdChain
 
+* Best Practices:
+	* https://github.com/ConsenSys/smart-contract-best-practices
 
 Email me at daniel at homesidekick dot com
